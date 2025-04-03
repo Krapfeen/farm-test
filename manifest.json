@@ -1,0 +1,20 @@
+{
+  "name": "Farm Management App",
+  "short_name": "FarmApp",
+  "description": "Приложение для учета сельскохозяйственных животных и продукции",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "lang": "ru-RU",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "/screenshots/screenshot1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Главный экран приложения"
+    }
+  ]
+}
