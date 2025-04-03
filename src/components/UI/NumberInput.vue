@@ -1,4 +1,7 @@
 <script setup>
+import { useId } from 'vue';
+
+const model = defineModel()
 const props = defineProps({
   label: {
     type: String,
@@ -17,16 +20,13 @@ const props = defineProps({
     default: false
   },
 })
-const emit = defineEmits(['update:value']);
 
-function updateValue(event) {
-  emit('update:value', event.target.value);
-}
+const id = useId()
 </script>
 
 <template>
-  <label class="col-sm-2 col-form-label">{{ label }}</label>
+  <label class="col-sm-2 col-form-label" :for="id">{{ label }}</label>
   <div class="col-sm-10">
-    <input :value="value" :readonly="readonly" :required="required" @input="updateValue" type="number" class="form-control">
+    <input :readonly="readonly" v-model="model" :id="id" :required="required" type="number" class="form-control">
   </div>
 </template>

@@ -46,11 +46,11 @@ export const getDocuments = async (collectionName) => {
 
 export const getDocumentById = async (collectionName, id) => {
   try {
-    const docRef = doc(db, collectionName, id); // Создаем ссылку на документ
-    const docSnap = await getDoc(docRef); // Получаем документ
+    const docRef = doc(db, collectionName, id);
+    const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      return { id: docSnap.id, ...docSnap.data() }; // Возвращаем данные документа
+      return { id: docSnap.id, ...docSnap.data() };
     } else {
       console.log('Документ не найден');
       return null;
@@ -61,7 +61,7 @@ export const getDocumentById = async (collectionName, id) => {
   }
 };
 
-export const getDocumentByField = async (collectionName, field, value) => {
+export const getDocumentsByField = async (collectionName, field, value) => {
   try {
     const q = query(collection(db, collectionName), where(field, '==', value));
     const querySnapshot = await getDocs(q);

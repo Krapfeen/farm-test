@@ -1,4 +1,6 @@
 <script setup>
+import { useId } from 'vue';
+
 const model = defineModel()
 const props = defineProps({
   label: {
@@ -15,12 +17,13 @@ const props = defineProps({
   },
 })
 
+const id = useId()
 </script>
 
 <template>
-  <label class="col-sm-2 col-form-label">{{ label }}</label>
-  <select class="form-select" :required="required" :title=label v-model="model">
+  <label class="col-sm-2 col-form-label" :for="id">{{ label }}</label>
+  <select class="form-select" :required="required" :title=label v-model="model" :id="id">
     <option selected disabled>Выберите {{ label.toLowerCase() }}</option>
-    <option v-for="(value, key) in array" :key="key" :value="key">{{ value }}</option>
+    <option v-for="object in array" :key="object.genus" :value="object.name">{{ object.name }}</option>
   </select>
 </template>

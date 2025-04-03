@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import { addDocument, updateDocument, deleteDocument, getDocuments, getDocumentById, getDocumentByField } from '@/api/firestore';
+import { addDocument, updateDocument, deleteDocument, getDocuments, getDocumentById, getDocumentsByField } from '@/api/firestore';
 
 export function useFirestore(collectionName) {
   const item = ref(null);
@@ -55,10 +55,10 @@ export function useFirestore(collectionName) {
       loading.value = false;
     }
   };
-  const fetchItemByField = async (field, value) => {
+  const fetchItemsByField = async (field, value) => {
     loading.value = true;
     try {
-      items.value = await getDocumentByField(collectionName, field, value)
+      items.value = await getDocumentsByField(collectionName, field, value)
     } catch (err) {
       error.value = err;
       console.error('Ошибка при загрузке проекта:', err);
@@ -77,6 +77,6 @@ export function useFirestore(collectionName) {
     updateItem,
     deleteItem,
     fetchItemById,
-    fetchItemByField
+    fetchItemsByField
   };
 }

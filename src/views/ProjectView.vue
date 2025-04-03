@@ -7,7 +7,7 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute()
 const subgroup = ref(route.params.group)
-const { items, fetchItemByField } = useFirestore('projects')
+const { items, fetchItemsByField } = useFirestore('projects')
 let url
 
 
@@ -16,8 +16,7 @@ function createLink(project) {
 }
 
 onMounted(async () => {
-  console.log(subgroup)
-  await fetchItemByField('subgroup', subgroup.value)
+  await fetchItemsByField('genus', subgroup.value)
 })
 
 </script>

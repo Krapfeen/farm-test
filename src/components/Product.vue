@@ -1,37 +1,29 @@
 <script setup>
 import ButtonInput from './UI/ButtonInput.vue';
-import { onMounted } from 'vue';
+import { onBeforeMount, ref } from 'vue';
 import { useFirestore } from '@/composables/useFirestore';
 
 const props = defineProps({
-  url: {
-    type: String,
-    required: false,
-  },
+  // url: {
+  //   type: String,
+  //   required: false,
+  // },
   object: {
     type: Object,
     required: true
   }
 });
 
-const object = {
-  income: 0,
-  type: '',
-  date: '2022-02-02',
-  project: {
-    name: 'Еуые'
-  }
-}
+const url = ref('')
+const { items, fetchItems } = useFirestore('projects')
 
-const { item, fetchItemById } = useFirestore('projects')
-
-onMounted(async () => {
-  await fetchItemById('')
-
+onBeforeMount(async () => {
+  await fetchItems()
+  props.object.project = items.value.find(element => element.id == props.object.project)
+  url.value = `/projects/${props.object.project.id}`
 })
-// props.object.project = projects.find(element => element.id == props.object.project)
 
-let url = `/projects/${props.object.project.id}`
+// let url = `/projects/${props.object.value.project.id}`
 </script>
 <template>
   <div class="card my-2">

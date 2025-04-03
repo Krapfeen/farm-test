@@ -1,4 +1,6 @@
 <script setup>
+import { useId } from 'vue';
+
 const model = defineModel()
 const props = defineProps({
   label: {
@@ -18,11 +20,13 @@ const props = defineProps({
     default: false
   },
 })
+
+const id = useId()
 </script>
 
 <template>
-  <label class="col-sm-2 col-form-label">{{ label }}</label>
+  <label class="col-sm-2 col-form-label" :for="id">{{ label }}</label>
   <div class="col-sm-10">
-    <input :readonly="readonly" :required="required" v-model="model" type="text" class="form-control">
+    <input :readonly="readonly" :required="required" :id="id" v-model="model" type="text" class="form-control">
   </div>
 </template>

@@ -18,8 +18,6 @@ const props = defineProps({
 });
 
 onMounted(() => {
-
-  console.log(props.object.value)
 })
 </script>
 <template>

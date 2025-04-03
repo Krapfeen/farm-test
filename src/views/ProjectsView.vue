@@ -14,7 +14,6 @@ onMounted(async () => {
   await fetchItems();
   projects.value = items.value;
 });
-console.log(projects.value)
 </script>
 
 <template>

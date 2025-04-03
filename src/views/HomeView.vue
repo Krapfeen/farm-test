@@ -1,21 +1,28 @@
+<template>
+  <Project v-for="project in projects" :name="project.name" :url="'/' + project.genus.toLowerCase()":object="project" />
+</template>
+
 <script setup>
-import { ref, onMounted } from 'vue'
 import Project from '@/components/Project.vue';
-import cattles from '@/constants/cattles';
+import { useFirestore } from '@/composables/useFirestore';
+import { onBeforeMount, ref } from 'vue';
+
+const { items, fetchItems } = useFirestore('projects')
 
 const projects = ref([])
 
-onMounted(async () => {
-  cattles.forEach((element) => {
-    projects.value.push(...element.type)
+onBeforeMount(async () => {
+  await fetchItems()
+  items.value.forEach(element => {
+    if (element.type && element.genus) {
+      let object = { name: element.type, genus: element.genus }
+      const isDuplicate = projects.value.some(
+        item => item.name === object.name && item.genus === object.genus
+      )
+      if (!isDuplicate) {
+        projects.value.push(object)
+      }
+    }
   })
-});
-
-function createLink (link) {
-  return `/${link}`.toLowerCase()
-}
-
+})
 </script>
-<template>
-  <Project v-for="project in projects" :name="project.name" :url=createLink(project.genus) :object="project" />
-</template>
