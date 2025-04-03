@@ -2,17 +2,17 @@
 import Product from '@/components/Product.vue';
 import ButtonInput from '@/components/UI/ButtonInput.vue';
 import { useFirestore } from '@/composables/useFirestore';
-import { onMounted } from 'vue';
+import { onBeforeMount } from 'vue';
 
-const { items, fetchItems } = useFirestore('incomes')
+const { items, fetchItems } = useFirestore('expenses')
 
-onMounted(async () => {
+onBeforeMount(async () => {
   await fetchItems()
 })
 
 </script>
 
 <template>
-  <ButtonInput url="/incomes/add">Добавить доход</ButtonInput>
+  <ButtonInput url="/expenses/add">Добавить расходы</ButtonInput>
   <Product v-for="income in items" :object="income" />
 </template>

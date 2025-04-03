@@ -13,7 +13,7 @@ const id = ref(null)
 const formData = ref({})
 const incomes = ref([])
 const { addItem } = useFirestore('incomes')
-const { item, items, fetchItems, fetchItemById, fetchItemsByField, updateItem } = useFirestore('projects')
+const { item, items, fetchItems, fetchItemById, fetchItemsByField } = useFirestore('projects')
 
 function getIncomesList () {
   cattles.forEach(element => {

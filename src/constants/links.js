@@ -13,8 +13,8 @@ const links = [
   },
   {
     name: 'Расходы',
-    url: '#',
-    disable: true,
+    url: '/expenses',
+    // disable: true,
   },
 ]
 
