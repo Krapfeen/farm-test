@@ -20,9 +20,12 @@ const props = defineProps({
 </script>
 
 <template>
-  <component :is="type === 'link' ? RouterLink : 'button'" :to="type === 'link' ? to : undefined"
-    :class="['btn', `btn-${variant}`]" :type="type === 'btn' ? 'button' : undefined"
-    :data-bs-dismiss="type === 'btn' ? 'modal' : undefined">
-    <slot></slot>
-  </component>
+
+  <!-- <div class="col-sm-10"> -->
+    <component :is="type === 'link' ? RouterLink : 'button'" :to="type === 'link' ? to : undefined"
+      :class="['btn', `btn-${variant}`]" :type="type === 'btn' ? 'button' : undefined"
+      :data-bs-dismiss="type === 'btn' ? 'modal' : undefined">
+      <slot></slot>
+    </component>
+  <!-- </div> -->
 </template>

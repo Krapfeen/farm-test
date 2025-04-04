@@ -1,9 +1,5 @@
-<template>
-  <Project v-for="project in projects" :object="project" />
-</template>
-
 <script setup>
-import Project from '@/components/Project.vue';
+import Group from '@/components/Group.vue';
 import { useFirestore } from '@/composables/useFirestore';
 import { onBeforeMount, ref } from 'vue';
 
@@ -26,3 +22,7 @@ onBeforeMount(async () => {
   })
 })
 </script>
+
+<template>
+  <Group v-for="project in projects" :object="project" />
+</template>

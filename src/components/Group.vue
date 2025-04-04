@@ -12,7 +12,7 @@ const props = defineProps({
   <div class="card mt-2">
     <div class="card-body d-flex justify-content-between">
       <h5 class="card-title">{{ object.name }}</h5>
-      <ButtonInput type="link" :to="'/projects/' + object.id">Перейти</ButtonInput>
+      <ButtonInput type="link" :to="'/' + object.genus.toLowerCase()">Перейти</ButtonInput>
     </div>
   </div>
 </template>

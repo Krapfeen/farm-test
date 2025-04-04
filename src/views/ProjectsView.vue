@@ -15,5 +15,5 @@ onMounted(async () => {
 
 <template>
   <RouterLink to="/projects/add" class="btn btn-primary d-flex justify-content-center">Добавить проект</RouterLink>
-  <Project v-for="project in projects" :name="project.name" :url="'#/projects/' + project.id" :object="project" />
+  <Project v-for="project in projects" :name="project.name" :url="'/projects/' + project.id" :object="project" />
 </template>

@@ -22,8 +22,10 @@ const id = useId()
 
 <template>
   <label class="col-sm-2 col-form-label" :for="id">{{ label }}</label>
-  <select class="form-select" :required="required" :title=label v-model="model" :id="id">
-    <option selected disabled>Выберите {{ label.toLowerCase() }}</option>
-    <option v-for="object in array" :key="object.genus" :value="object.name">{{ object.name }}</option>
-  </select>
+  <div class="col-sm-10">
+    <select class="form-select" :required="required" :title=label v-model="model" :id="id">
+      <option selected disabled>Выберите {{ label.toLowerCase() }}</option>
+      <option v-for="object in array" :key="object.genus" :value="object.name">{{ object.name }}</option>
+    </select>
+  </div>
 </template>
