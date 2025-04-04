@@ -2,12 +2,9 @@
 import { ref, onMounted } from 'vue'
 import Project from '@/components/Project.vue'
 import { useFirestore } from '@/composables/useFirestore'
+import { RouterLink } from 'vue-router';
 
 const projects = ref([])
-
-function getProjectURL(project) {
-  return `/projects/${project.id}`;
-}
 const { items, fetchItems } = useFirestore('projects');
 
 onMounted(async () => {
@@ -17,6 +14,6 @@ onMounted(async () => {
 </script>
 
 <template>
-  <a href="/projects/add" class="btn btn-primary d-flex justify-content-center">Добавить проект</a>
-  <Project v-for="project in projects" :name="project.name" :url=getProjectURL(project) :object="project" />
+  <RouterLink to="/projects/add" class="btn btn-primary d-flex justify-content-center">Добавить проект</RouterLink>
+  <Project v-for="project in projects" :name="project.name" :url="'#/projects/' + project.id" :object="project" />
 </template>

@@ -1,23 +1,27 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import ButtonInput from './UI/ButtonInput.vue';
 
 const props = defineProps({
-  name: {
-    type: String,
-    required: true,
-  },
-  url: {
-    type: String,
-    required: false,
-  },
+  // name: {
+  //   type: String,
+  //   required: true,
+  // },
+  // url: {
+  //   type: String,
+  //   required: false,
+  // },
   object: {
     type: Object,
     required: true
   }
 });
 
+const link = ref('')
+
+
 onMounted(() => {
+  link.value = '#/' + props.object.genus.toLowerCase()
 })
 </script>
 <template>
@@ -39,7 +43,7 @@ onMounted(() => {
         </div>
       </div> -->
       <!-- <a :href="url" class="btn btn-primary">Перейти</a> -->
-       <ButtonInput :href="url">Перейти</ButtonInput>
+       <ButtonInput :href="link">Перейти</ButtonInput>
     </div>
   </div>
 </template>

@@ -5,15 +5,15 @@ const links = [
   },
   {
     name: 'Проекты',
-    url: '/projects',
+    url: '/projects/',
   },
   {
     name: 'Доходы',
-    url: '/incomes',
+    url: '/incomes/',
   },
   {
     name: 'Расходы',
-    url: '/expenses',
+    url: '/expenses/',
     // disable: true,
   },
 ]

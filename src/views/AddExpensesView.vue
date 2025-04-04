@@ -34,7 +34,7 @@ async function submitForm() {
       formData.value.date = new Date().toISOString().split('T')[0]
     }
     await addItem(formData.value)
-    router.push(`/projects/${id.value}`)
+    router.push(`/projects/${docRef.id}`)
   } catch (error) {
     console.error(error)
   }

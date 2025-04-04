@@ -13,6 +13,6 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <ButtonInput url="/expenses/add">Добавить расходы</ButtonInput>
+  <ButtonInput url="#/expenses/add">Добавить расходы</ButtonInput>
   <Product v-for="income in items" :object="income" />
 </template>

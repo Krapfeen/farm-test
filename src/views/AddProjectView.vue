@@ -75,19 +75,11 @@ async function submitForm() {
 <template>
   <form @submit.prevent="submitForm" method="post" class="row mb-3">
     <StringInput label="Название проекта" v-model="formData.name" :required="true" />
-
-    <SelectInput label="Тип скотины" :options="animalGroups" :required="true" v-model="selectedGroup"
-      @update:modelValue="updateGroup" />
-
-    <SelectInput v-if="selectedGroup" label="Вид закупа" :options="subgroups" :required="true"
-      v-model="selectedSubgroup" @update:modelValue="updateSubgroup" />
-
+    <SelectInput label="Тип скотины" :options="animalGroups" :required="true" v-model="selectedGroup" @update:modelValue="updateGroup" />
+    <SelectInput v-if="selectedGroup" label="Вид закупа" :options="subgroups" :required="true" v-model="selectedSubgroup" @update:modelValue="updateSubgroup" />
     <SelectInput v-if="birdTypes.length > 0" label="Тип закупа" :options="birdTypes" v-model="formData.type" />
-
     <DateInput label="Дата приобретения" v-model="formData.startDate" :required="true" />
-
     <NumberInput label="Затраты" @update:value="updateField('expenses', $event)" :required="true" />
-
     <input type="submit" value="Создать проект" class="btn btn-primary mt-4">
   </form>
 </template>

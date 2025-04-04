@@ -13,6 +13,6 @@ onMounted(async () => {
 </script>
 
 <template>
-  <ButtonInput url="/incomes/add">Добавить доход</ButtonInput>
+  <ButtonInput url="#/incomes/add">Добавить доход</ButtonInput>
   <Product v-for="income in items" :object="income" />
 </template>

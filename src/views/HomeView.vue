@@ -1,5 +1,5 @@
 <template>
-  <Project v-for="project in projects" :name="project.name" :url="'/' + project.genus.toLowerCase()":object="project" />
+  <Project v-for="project in projects" :object="project" />
 </template>
 
 <script setup>

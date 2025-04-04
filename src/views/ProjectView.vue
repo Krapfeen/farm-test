@@ -22,5 +22,5 @@ onMounted(async () => {
 </script>
 <template>
   <ButtonInput>Добавить затраты</ButtonInput>
-  <Project v-for="item in items" :name="item.name" :url=createLink(item) :object="item" />
+  <Project v-for="item in items" :name="item.name" :url="'#/projects/' + item.id" :object="item" />
 </template>
