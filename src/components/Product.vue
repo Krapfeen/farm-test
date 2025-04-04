@@ -4,10 +4,6 @@ import { onBeforeMount, ref } from 'vue';
 import { useFirestore } from '@/composables/useFirestore';
 
 const props = defineProps({
-  // url: {
-  //   type: String,
-  //   required: false,
-  // },
   object: {
     type: Object,
     required: true
@@ -20,10 +16,7 @@ const { items, fetchItems } = useFirestore('projects')
 onBeforeMount(async () => {
   await fetchItems()
   props.object.project = items.value.find(element => element.id == props.object.project)
-  url.value = `/projects/${props.object.project.id}`
 })
-
-// let url = `/projects/${props.object.value.project.id}`
 </script>
 <template>
   <div class="card my-2">
@@ -32,7 +25,7 @@ onBeforeMount(async () => {
       <p class="card-text">{{ object.date }}</p>
       <p class="card-text">{{ object.income }}</p>
       <p class="card-text">{{ object.type }}</p>
-      <ButtonInput :href=url>Перейти</ButtonInput>
+      <ButtonInput type="link" :to="'/projects/' + object.project.id">Перейти</ButtonInput>
     </div>
   </div>
 </template>

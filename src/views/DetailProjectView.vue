@@ -37,8 +37,8 @@ onBeforeMount(async () => {
   <div class="row mb-3" v-if="item">
     <h1 class="fs-1">{{ item.name }}</h1>
     <div class="d-flex justify-content-between my-4">
-      <ButtonInput type="link" :url="'#/incomes/' + id + '/add'">Добавить доходы</ButtonInput>
-      <ButtonInput type="link" :url="'#/expenses/' + id + '/add'">Добавить расходы</ButtonInput>
+      <ButtonInput type="link" :to="'/incomes/' + id + '/add'">Добавить доходы</ButtonInput>
+      <ButtonInput type="link" :to="'/expenses/' + id + '/add'">Добавить расходы</ButtonInput>
     </div>
     <StringInput label="Тип скотины" v-model="item.type" :readonly="true" />
     <StringInput label="Подтип скотины" v-model="item.subtype" :readonly="true" />
