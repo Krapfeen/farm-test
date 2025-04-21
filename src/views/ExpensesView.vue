@@ -13,6 +13,6 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <ButtonInput to="/expenses/add">Добавить расходы</ButtonInput>
+  <RouterLink to="/expenses/add" class="btn btn-primary d-flex justify-content-center">Добавить расходы</RouterLink>
   <Product v-for="income in items" :object="income" />
 </template>

@@ -13,6 +13,6 @@ onMounted(async () => {
 </script>
 
 <template>
-  <ButtonInput to="/incomes/add">Добавить доход</ButtonInput>
+  <RouterLink to="/incomes/add" class="btn btn-primary d-flex justify-content-center">Добавить доход</RouterLink>
   <Product v-for="income in items" :object="income" />
 </template>
