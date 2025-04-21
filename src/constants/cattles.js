@@ -6,9 +6,10 @@ const cattles = [
       {
         name: "Несушки",
         produced_goods: [
-          { name: "Яйцо" },
+          { name: "Выведение из яиц" },
           { name: "Инкубационное яйцо" },
-          { name: "Цыпленок" }]
+          { name: "Цыпленок" }
+        ]
       },
       {
         name: "Мясные",
@@ -31,16 +32,18 @@ const cattles = [
       {
         name: "Несушки",
         produced_goods: [
-          'Яйца',
-          'Мясо',
+          { name: "Яйцо" },
+          { name: "Инкубационное яйцо" },
+          { name: "Цыпленок" }
         ]
       },
       {
         name: "Мясные",
-        produced_goods: [
-          'Мясо',
-        ]
       },
+    ],
+    produced_goods: [
+      { name: "Мясо" },
+      { name: "Цыпленок" }
     ],
     appearance_methods: [
       { name: "Выведение из яиц" },
@@ -54,11 +57,12 @@ const cattles = [
     subtypes: [
       {
         name: "Мясные",
-        produced_goods: [
-          'Яйца',
-          'Мясо',
-        ]
       },
+    ],
+
+    produced_goods: [
+      { name: "Мясо" },
+      { name: "Цыпленок" }
     ],
     appearance_methods: [
       { name: "Выведение из яиц" },
@@ -68,13 +72,14 @@ const cattles = [
   },
   {
     name: "Гуси",
-    genus: "Turkeys",
+    genus: "Geese",
     subtypes: [
       {
         name: "Мясные",
         produced_goods: [
-          'Яйца',
-          'Мясо',
+          { name: "Яйцо" },
+          { name: "Инкубационное яйцо" },
+          { name: "Цыпленок" }
         ]
       },
     ],
@@ -86,13 +91,14 @@ const cattles = [
   },
   {
     name: "Утки",
-    genus: "Turkeys",
+    genus: "Ducks",
     subtypes: [
       {
         name: "Мясные",
         produced_goods: [
-          'Яйца',
-          'Мясо',
+          { name: "Яйцо" },
+          { name: "Инкубационное яйцо" },
+          { name: "Цыпленок" }
         ]
       },
     ],
