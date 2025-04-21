@@ -48,7 +48,7 @@ async function submitForm() {
     <SelectInput v-if="!id" label="Проект" :array=items v-model="formData.project" />
     <SelectInput label="Вид расоходов" :array=expenses v-model="formData.type" />
     <NumberInput label="Сумма расхода" v-model="formData.expense" />
-    <DateInput label="Дата дохода" v-model="formData.date" />
+    <DateInput label="Дата расхода" v-model="formData.date" />
     <input type="submit" value="Зафиксировать" class="btn btn-primary mt-4">
   </form>
 </template>
