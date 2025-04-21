@@ -17,10 +17,10 @@ const cattles = [
     ],
     produced_goods: [
       { name: "Мясо" },
-      { name: "Цыпленок" }
     ],
     appearance_methods: [
       { name: "Выведение из яиц" },
+      { name: "Цыпленок" },
       { name: "Покупка молодняка" },
       { name: "Инкубация" }
     ],
@@ -47,6 +47,7 @@ const cattles = [
     ],
     appearance_methods: [
       { name: "Выведение из яиц" },
+      { name: "Цыпленок" },
       { name: "Покупка молодняка" },
       { name: "Инкубация" }
     ],
@@ -66,6 +67,7 @@ const cattles = [
     ],
     appearance_methods: [
       { name: "Выведение из яиц" },
+      { name: "Цыпленок" },
       { name: "Покупка молодняка" },
       { name: "Инкубация" }
     ],
@@ -85,6 +87,7 @@ const cattles = [
     ],
     appearance_methods: [
       { name: "Выведение из яиц" },
+      { name: "Цыпленок" },
       { name: "Покупка молодняка" },
       { name: "Инкубация" }
     ],
@@ -104,6 +107,7 @@ const cattles = [
     ],
     appearance_methods: [
       { name: "Выведение из яиц" },
+      { name: "Цыпленок" },
       { name: "Покупка молодняка" },
       { name: "Инкубация" }
     ],
