@@ -2,7 +2,7 @@
   "name": "Farm Management App",
   "short_name": "Трубеевская ферма",
   "description": "Приложение для учета сельскохозяйственных животных и продукции",
-  "start_url": "/farm-test",
+  "start_url": "/farm-test/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4CAF50",
